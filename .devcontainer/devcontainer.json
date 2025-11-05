@@ -1,0 +1,43 @@
+{
+    "name": "PyTorch CUDA Dev Container",
+    // "image": "mcr.microsoft.com/devcontainers/python:3.10-bullseye", //could build container from image intended for use as devcontainer instead
+    "image": "nvidia/cuda:13.0.1-base-ubuntu24.04",
+    "containerUser": "vscode",
+    "features": {
+        // "ghcr.io/devcontainers/features/nvidia-cuda:2": {} //if building container from MS python devcontainer image instead of nvidia/cuda
+        //following features not necessary if building from python devcontainer
+        "ghcr.io/devcontainers/features/python:1": {
+            "version": "3.12",
+            "installTools": true
+        },
+        "ghcr.io/nils-geistmann/devcontainers-features/create-remote-user:0": {
+            "create": true,
+            "addToSudo": true,
+            "installSudo": true,
+            "passwordLessSudo": true
+        }
+    },
+    "postCreateCommand": "pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118 && pip install -r ${containerWorkspaceFolder}/.devcontainer/requirements.txt",
+    "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash"
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-toolsai.jupyter",
+                "ms-python.vscode-pylance",
+                "ms-python.debugpy",
+                "ms-toolsai.datawrangler"
+            ]
+        }
+    },
+    "runArgs": [
+        "--gpus",
+        "all"
+    ]
+    // "hostRequirements": {
+    //     "gpu": "optional"
+    // }
+}
