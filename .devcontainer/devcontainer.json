@@ -17,7 +17,7 @@
             "passwordLessSudo": true
         }
     },
-    "postCreateCommand": "pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118 && pip install -r ${containerWorkspaceFolder}/.devcontainer/requirements.txt",
+    "postCreateCommand": "sudo apt install git-lfs && pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118 && pip install -r ${containerWorkspaceFolder}/.devcontainer/requirements.txt",
     "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
     "customizations": {
         "vscode": {

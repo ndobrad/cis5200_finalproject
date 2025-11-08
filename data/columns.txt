@@ -1,0 +1,21 @@
+- review id: unique id for each review
+- rating: ratings for each review
+- title: review title
+- text: review text
+- asin: product sub id
+- parent_asin: unique product id
+- user_id: user’s id that wrote the review
+- timestamp: you know, right?
+- helpful_vote: you know, right?
+- verified_purchase: you know, right?
+- text_len: length of the review text
+- text_words: # of words in each review
+- inter_review_time: our dependent variables
+- main_category: main category of the product
+- average_rating: average rating for the product
+- rating_number: cumulative number of ratings for the product
+- price: price for the product
+- store: maybe the manufacturer
+- categories: product sub category
+- MPN: Text embedding
+- ResNet: Image embedding

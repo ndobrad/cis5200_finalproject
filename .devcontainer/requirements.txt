@@ -5,3 +5,8 @@ pandas
 scikit-learn 
 matplotlib
 seaborn
+tqdm
+plotly
+sae_lens
+sae_dashboard
+transformer_lens
