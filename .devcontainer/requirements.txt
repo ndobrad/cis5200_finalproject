@@ -10,3 +10,7 @@ plotly
 sae_lens
 sae_dashboard
 transformer_lens
+pyarrow
+fastparquet
+numpy
+xgboost
